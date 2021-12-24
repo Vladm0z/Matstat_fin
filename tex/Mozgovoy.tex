@@ -34,8 +34,15 @@
     Ks\_2sampResult(statistic=0.06, pvalue=0.05462666510701526)
 \end{verbatim}
 Так как pvalue > 0.05, то законы не совпадают, но, что видно из значения, довольно близки
-\vskip 0.2in \noindent
-Распределение модулей похоже на полунормальное распределение (так как является модулем нормального)
+\vskip 0.1in \noindent
+Распределение модулей похоже на полунормальное распределение (так как является модулем нормального c $\sigma \approx 0.56$), соответственно плотность функции распределения будет
+\begin{gather*}
+f(x) =
+\begin{cases}
+    \frac{\sqrt{2}}{0.56 \sqrt{\pi}} \exp\left(-\frac{x^2}{2 \cdot 0.56^2}\right), \text{ если } x \geqslant 0\\
+    0, \text{ если } x \leqslant 0
+\end{cases}
+\end{gather*}
 \vskip 0.4in
 
 
@@ -50,8 +57,8 @@
 Смесь плотностей имеет вид $\omega(\alpha) = \int\limits_{\mathbb{R}} v(\alpha, \theta) u(\theta) d \theta$ и $A| \Theta \sim \mathcal{U}(0; \Theta),\ \Theta \sim \mathcal{U}(0; 1)$, тогда
 \begin{gather*}
     \int\limits_{\mathbb{R}} v_{A|\Theta}(\alpha, \theta) u_{\Theta}(\theta) d \theta
-    = \int\limits_{0}^{\alpha} 0 d \theta + \int\limits_{\alpha}^{1} \frac{1}{\theta} d \theta
-    = -\ln(\alpha)
+    = \left(\int\limits_{0}^{\alpha} 0 d \theta + \int\limits_{\alpha}^{1} \frac{1}{\theta} d \theta\right) \cdot 1_{0 < \alpha < 1}
+    = -\ln(\alpha) \cdot 1_{0 < \alpha < 1}
 \end{gather*}
-То есть $w(x) = -\ln(x)$
+То есть $w(x) = -\ln(x) \cdot 1_{0 < x < 1}$
 
